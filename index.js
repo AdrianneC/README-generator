@@ -34,7 +34,7 @@ const questions = [
   {
     type: "input",
     name: "contributing",
-    message: "Outline how someone cna contribute to your project:"
+    message: "Outline how someone can contribute to your project:"
   },
   {
     type: "input",
@@ -53,9 +53,8 @@ const questions = [
 // function to write README file
 function writeToFile(fileName, data) {
   const createReadme = path.join(process.cwd(), fileName);
-  fs.writeFileSync(createReadme, data) ?
-    console.log(`${fileName} has been successfully created!`) :
-    console.error(`There was an error creating ${fileName}`);
+  fs.writeFileSync(createReadme, data);
+    console.log(`${fileName} has been successfully created!`);
 }
 
 // function to initialize program
@@ -65,7 +64,7 @@ function init() {
         writeToFile("README.md", writeAnswers);
       },
       error => {
-        console.error("There was an error with the prompt", error);
+        console.error("There is an error with the prompt", error);
       }
     );
 }
