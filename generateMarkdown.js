@@ -9,15 +9,19 @@ function generateMarkdown(data) {
   const licenseBadge = licenseBadges[data.license] || "";
 
 
-  const tableOfContents = `## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [License](#license)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [Questions](#questions)\n`;
+  const tableOfContents = `\n- [Installation](#installation)\n- [Usage](#usage)\n- [License](#license)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [Questions](#questions)`;
   
   return `
+
   ${licenseBadge}
+
   ## ${data.title}
-  ${tableOfContents}
 
   ## Description
   ${data.description}
+
+  ## Table of Contents
+  ${tableOfContents}
   
   ## Installation
   ${data.installation}
@@ -26,7 +30,7 @@ function generateMarkdown(data) {
   ${data.usage}
   
   ## License
-  ${data.license}
+  This project is covered under the ${data.license} license.
   
   ## Contributing
   ${data.contributing}
